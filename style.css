@@ -1,0 +1,153 @@
+@import url("https://fonts.googleapis.com/css2?family=Anton&family=Poppins:wght@300;400;700&display=swap");
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* font-family: 'Anton', sans-serif;
+font-family: 'Poppins', sans-serif; */
+
+body {
+  font-family: "Poppins", sans-serif;
+}
+#hero {
+  position: sticky;
+  top: -360px;
+  z-index: 999;
+  background-color: #3b657a;
+  color: #fff;
+}
+
+.texto {
+  font-family: "Anton", sans-serif;
+  width: 100%;
+  color: transparent;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 60px;
+  font-weight: bold;
+  background-image: url("fotos/arte.jpg");
+  background-size: cover;
+  background-position-y: top;
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+#search {
+  position: relative;
+  padding: 5px;
+  display: inline-flex;
+  margin: 0 auto;
+}
+
+#search input {
+  width: 0px;
+  height: 40px;
+  padding-left: 20px;
+  font-size: 13px;
+  color: gray;
+  outline: none;
+  border: 1px solid gray;
+  border-radius: 25px;
+  transition: 800ms ease-in-out;
+}
+
+.icono {
+  position: absolute;
+  display: flex;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: white;
+  width: 55px;
+  height: 55px;
+  text-align: center;
+  font-size: 25px;
+  color: #3b657a;
+  font-weight: bold;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  cursor: pointer;
+}
+
+#search:hover input,
+#search input:focus,
+#search input.active {
+  width: 240px;
+  padding-right: 55px;
+}
+
+#intro {
+  font-size: 25px;
+}
+
+.colum-pokemon {
+  display: none;
+}
+
+.colum-pokemon:first-child,
+.colum-pokemon:nth-child(2),
+.colum-pokemon:nth-child(3),
+.colum-pokemon:nth-child(4),
+.colum-pokemon:nth-child(5),
+.colum-pokemon:nth-child(6),
+.colum-pokemon:nth-child(7),
+.colum-pokemon:nth-child(8),
+.colum-pokemon:nth-child(9),
+.colum-pokemon:nth-child(10),
+.colum-pokemon:nth-child(11),
+.colum-pokemon:nth-child(12) {
+  display: block;
+}
+
+#pokemones .card {
+  font-size: 18px;
+  border: 1px solid gray;
+  transition: 800ms ease-in-out;
+}
+
+#pokemones .card:hover {
+  transform: translateY(-20px);
+}
+
+#pokemones .card img {
+  height: 250px;
+  object-fit: cover;
+  transition: 0.8s ease-in-out;
+}
+
+#pokemones .card:hover img {
+  transform: scale(0.8);
+}
+
+.detalle {
+  font-size: 18px;
+  background-color: white;
+  padding: 10px;
+}
+
+.detalle p {
+  background-color: rgba(77, 149, 164, 1);
+  margin-bottom: 0 !important;
+  color: #fff;
+}
+
+.detalle p:nth-child(2) {
+  border-right: 0;
+  background-color: rgba(206, 106, 119, 1);
+}
+
+.detalle p:nth-child(3) {
+  border-right: 0;
+  background-color: rgba(235, 175, 133, 1);
+}
+
+#load-more {
+  background-color: rgba(77, 149, 164, 1);
+  color: #fff;
+}

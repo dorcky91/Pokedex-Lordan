@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>POKEDEX LORDAN ::</title>
+
+    <link
+      rel="shortcut icon"
+      href="fotos/emmanuelle-magnenat-rZWxFxEn_OI-unsplash.jpg"
+      type="image/x-icon" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <section id="hero">
+      <div class="container-fluid py-4">
+        <div class="row gy-5">
+          <div class="col-md-6 col-lg-6 mx-auto text-center">
+            <div class="titulo-pokedex">
+              <a class="text-decoration-none" href="index.html">
+                <h1 class="texto mb-4">POKÉDEX LORDAN!</h1>
+              </a>
+            </div>
+            <div id="intro" class="mb-5">
+              <p>¡The best creation of pokemon!</p>
+              <p>
+                This world is inhabited by creatures called pokemon. here a
+                world of dreams and adventures awaits you.
+              </p>
+              <p>Let's go!</p>
+            </div>
+            <div class="">
+              <p class="text-center fs-3 mb-3">
+                What Pokemón Are You Looking For?
+              </p>
+              <div id="search" class="mb-4">
+                <input type="text" placeholder="Search Pokémon..." />
+                <div class="icono">
+                  <i class="fas fa-search icon"></i>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="pokemones">
+      <div class="container-fluid py-4">
+        <div id="contenedor-pokemon" class="row gy-5 py-5 mb-4"></div>
+        <div class="text-center">
+          <button
+            id="load-more"
+            class="btn text-uppercase d-inline-flex align-items-center">
+            Load More...
+            <div
+              class="spinner-border ms-2 text-light visually-hidden"
+              role="status">
+              <span class="visually-hidden">Loading...</span>
+            </div>
+          </button>
+        </div>
+      </div>
+
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="modalDetalle"
+        tabindex="-1"
+        aria-labelledby="modalDetalleLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-scrollable">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h1 class="modal-title fs-5" id="modalDetalleLabel">
+                Information
+              </h1>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"></button>
+            </div>
+            <div class="modal-body pt-0">
+              <div class="mb-4 sticky-top py-2 bg-white">
+                <p class="fw-bold mb-0">
+                  <span id="nombre-pokemon"></span>
+                  <span id="numero-pokemon" class="badge bg-success"></span>
+                </p>
+              </div>
+              <div class="mb-4">
+                <img id="img-pokemon" height="380" alt="" />
+              </div>
+              <div class="row gy-4">
+                <div class="col-md-6">
+                  <div class="d-flex">
+                    <div
+                      style="height: 35px; width: 35px"
+                      class="d-flex align-items-center justify-content-center bg-success bg-opacity-75 shadow text-white me-3 rounded-circle">
+                      <i class="fa-solid fa-weight-scale"></i>
+                    </div>
+                    <div class="small">
+                      <p class="fw-bold mb-0">Weight</p>
+                      <span id="weight-pokemon">86kg</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex">
+                    <div
+                      style="height: 35px; width: 35px"
+                      class="d-flex align-items-center justify-content-center bg-success bg-opacity-75 shadow text-white me-3 rounded-circle">
+                      <i class="fa-brands fa-openid"></i>
+                    </div>
+                    <div class="small">
+                      <p class="fw-bold mb-0">Height</p>
+                      <span id="height-pokemon">86kg</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex">
+                    <div
+                      style="height: 35px; width: 35px"
+                      class="d-flex align-items-center justify-content-center bg-success bg-opacity-75 shadow text-white me-3 rounded-circle">
+                      <i class="fa-brands fa-typo3"></i>
+                    </div>
+                    <div class="small">
+                      <p class="fw-bold mb-0">Type</p>
+                      <ol
+                        id="tipo-pokemon"
+                        class="list-group list-group-numbered"></ol>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex">
+                    <div
+                      style="height: 35px; width: 35px"
+                      class="d-flex align-items-center justify-content-center bg-success bg-opacity-75 shadow text-white me-3 rounded-circle">
+                      <i class="fa-solid fa-staff-snake"></i>
+                    </div>
+                    <div class="small">
+                      <p class="fw-bold mb-0">Weakness</p>
+                      <ol
+                        id="weakness-pokemon"
+                        class="list-group list-group-numbered"></ol>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex">
+                    <div
+                      style="height: 35px; width: 35px"
+                      class="d-flex align-items-center justify-content-center bg-success bg-opacity-75 shadow text-white me-3 rounded-circle">
+                      <i class="fa-solid fa-snowflake"></i>
+                    </div>
+                    <div class="small">
+                      <p class="fw-bold mb-0">Abilities</p>
+                      <ol
+                        id="abilities-pokemon"
+                        class="list-group list-group-numbered"></ol>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="d-flex">
+                    <div
+                      style="height: 35px; width: 35px"
+                      class="d-flex align-items-center justify-content-center bg-success bg-opacity-75 shadow text-white me-3 rounded-circle">
+                      <i class="fa-solid fa-cubes-stacked"></i>
+                    </div>
+                    <div class="small">
+                      <p class="fw-bold mb-0">Slug</p>
+                      <span id="slug-pokemon">86kg</span>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-12">
+                  Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                  Possimus repellendus qui rerum officiis consectetur! Suscipit
+                  illo est architecto, aliquam distinctio ea ipsum nostrum
+                  dignissimos quam ducimus dolor tempora vel atque?
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal">
+                Close
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="script.js"></script>
+  </body>
+</html>
