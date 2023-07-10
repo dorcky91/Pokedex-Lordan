@@ -37,7 +37,8 @@ function rellenarCards() {
 
     contenedorPokemon.innerHTML += ` 
         <div class="col-sm-6 col-md-4 col-lg-3 colum-pokemon position-relative">
-            <div class="card h-100 border-0 shadow overflow-hidden">
+            <div class="card h-100 border-0 shadow overflow-hidden" data-aos="fade-up"
+            data-aos-duration="3000">
               <img loading="lazy" src="${pokemon.ThumbnailImage}" class="card-img-top" alt="${pokemon.ThumbnailAltText}" />
               <div class="card-body">
                 <small>No. ${pokemon.number}</small>

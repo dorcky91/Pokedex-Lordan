@@ -151,3 +151,13 @@ body {
   background-color: rgba(77, 149, 164, 1);
   color: #fff;
 }
+
+@media (max-width: 575.98px) {
+  #hero {
+    position: sticky;
+    top: -515px;
+    z-index: 999;
+    background-color: #3b657a;
+    color: #fff;
+  }
+}
